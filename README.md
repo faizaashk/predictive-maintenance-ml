@@ -2,6 +2,18 @@
 
 An end-to-end Machine Learning application that predicts industrial machine failures using operational sensor data. The project combines a Random Forest classification model, SHAP explainability, FastAPI, Streamlit, and Docker to deliver an interactive predictive maintenance system.
 
+## 🚀 Live Demo
+
+Explore the deployed application:
+
+- **Live Dashboard:** [Machine Intelligence – Predictive Maintenance](https://predictive-maintenance-ml-n29wdrkyhtp7zm2cyamnen.streamlit.app/)
+- **API Documentation:** [FastAPI Swagger UI](https://predictive-maintenance-ml-e8tp.onrender.com/docs)
+- **GitHub Repository:** [Predictive Maintenance & Machine Failure Prediction](https://github.com/faizaashk/predictive-maintenance-ml)
+
+The dashboard allows users to enter machine sensor readings, receive failure predictions, inspect SHAP-based explanations, compare sensor readings against historical averages, and explore prediction analytics.
+
+*Note: The free-tier API may take some time to respond after periods of inactivity because the hosting service can spin down idle instances.*
+
 ## Project Overview
 
 Unexpected machine failures can lead to production downtime, maintenance costs, and operational inefficiencies.
@@ -355,6 +367,27 @@ The endpoint accepts machine sensor measurements and returns:
 - Failure probability
 - SHAP-based feature explanations
 
+### Example API Request
+
+The following JSON payload demonstrates how to submit machine sensor readings to the prediction endpoint:
+
+**Request Body:**
+
+```json
+{
+  "Type": "M",
+  "air_temperature": 300.5,
+  "process_temperature": 310.2,
+  "rotational_speed": 1500,
+  "torque": 75,
+  "tool_wear": 150
+}
+```
+
+**Endpoint:** `POST /predict`
+
+**Content-Type:** `application/json`
+
 Interactive API testing is available through FastAPI Swagger documentation at `/docs`.
 
 
@@ -373,6 +406,7 @@ Interactive API testing is available through FastAPI Swagger documentation at `/
 | Notebook Environment | Jupyter Notebook |
 | Containerization | Docker, Docker Compose |
 | Version Control | Git, GitHub |
+
 
 ## Limitations
 
