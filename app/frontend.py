@@ -358,7 +358,7 @@ if st.button("Predict Machine Condition"):
         response = requests.post(
             API_URL,
             json=input_data,
-            timeout=10
+            timeout=90
         )
 
         response.raise_for_status()
