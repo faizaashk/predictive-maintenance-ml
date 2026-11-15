@@ -1,5 +1,12 @@
 
 import os
+
+import sys
+from pathlib import Path
+
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(PROJECT_ROOT))
+
 import streamlit as st
 import requests
 import pandas as pd
@@ -18,7 +25,7 @@ st.set_page_config(
     layout="wide"
 )
 
-API_URL = os.getenv(
+API_URL = os.getenv("API_URL") or st.secrets.get(
     "API_URL",
     "http://127.0.0.1:8000/predict"
 )
